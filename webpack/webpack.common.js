@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const postcss = require("postcss-loader");
 
 const browser = process.env.BROWSER;
 const BUILD_DIR_NAME = 'dist';
@@ -10,6 +11,7 @@ module.exports = {
   entry: {
     popup: path.join(__dirname, `../${SRC_DIR_NAME}/popup.ts`),
     background: path.join(__dirname, `../${SRC_DIR_NAME}/background/${browser}/background.ts`),
+    content: path.join(__dirname, `../${SRC_DIR_NAME}/content/${browser}/content.ts`)
   },
   output: {
     path: path.join(__dirname, `../${BUILD_DIR_NAME}`),
@@ -26,7 +28,8 @@ module.exports = {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader'
+          'css-loader',
+          'postcss-loader'
         ]
       },
       {

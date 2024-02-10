@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge');
 const TerserPlugin = require('terser-webpack-plugin');
 const common = require('./webpack.common.js');
+
 const sveltePreprocess = require('svelte-preprocess');
 
 module.exports = merge(common, {
@@ -17,7 +18,7 @@ module.exports = merge(common, {
             },
             emitCss: true,
             hotReload: false,
-            preprocess: sveltePreprocess({ sourceMap: false })
+            preprocess: svelteConfig.preprocess
           }
         }
       },

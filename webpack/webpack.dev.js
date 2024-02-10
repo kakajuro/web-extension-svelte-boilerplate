@@ -2,6 +2,8 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const sveltePreprocess = require('svelte-preprocess');
 
+const svelteConfig = require("../svelte.config.js");
+
 module.exports = merge(common, {
   devtool: 'inline-source-map',
   mode: 'development',
@@ -17,7 +19,7 @@ module.exports = merge(common, {
             },
             emitCss: false,
             hotReload: true,
-            preprocess: sveltePreprocess({ sourceMap: true })
+            preprocess: svelteConfig.preprocess
           }
         }
       },

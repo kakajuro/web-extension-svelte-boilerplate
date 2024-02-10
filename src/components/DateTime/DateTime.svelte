@@ -9,10 +9,10 @@
   const palette = getPalette(period);
 </script>
 
-<h2 style={`color: ${palette}`} class="datetime__h2">
+<h2 class="text-red-600 font-bold">
   {date}
 </h2>
-<h3 style={`color: ${palette}`} class="datetime__h3">
+<h3 class="text-red-600 font-bold">
   {time}
 </h3>
 
