@@ -50,5 +50,8 @@
     "webpack": "^5.16.0",
     "webpack-cli": "^4.4.0",
     "whatwg-fetch": "^3.0.0"
+  },
+  "dependencies": {
+    "webextension-polyfill-ts": "^0.26.0"
   }
 }
